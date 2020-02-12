@@ -1,0 +1,144 @@
+$color-blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$dark-blue: hsl(209, 33%, 12%);
+$color-silver: silver;
+$width-responsive: 600px;
+
+
+ 
+@mixin rad {
+  padding: 1.2em 2em;
+  border-radius: 20px;
+}
+
+@mixin hover {
+  cursor: pointer;
+  &:hover {
+    background-color: $pale-blue;
+  }
+}
+@mixin fa {
+    color: $color-blue;
+    margin: 0 1em;
+    padding: 0.5em;
+    border-radius: 50%;
+    border: 1px solid $pale-blue;
+}
+body {
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: "opensans-regular-webfont", sans-serif;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90px;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+.container {
+  &__soon {
+    display: flex;
+    justify-content: center;
+    &--title {
+      color: $gray;
+      font-weight: normal;
+      padding-right: 8px;
+    }
+  }
+
+  &__subscribe {
+    display: flex;
+    font-weight: normal;
+
+    justify-content: center;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+
+  &__input-div {
+    &--email {
+      margin-right: 1em;
+      width: $width-responsive/1.5;
+      border: 1px solid $gray;
+      @include rad();
+    }
+  }
+  &__button-div {
+    &--submit {
+        width: $width-responsive/4;
+        color: white;
+        background: none;
+        background-color: $color-blue;
+        border: none;
+      
+      @include rad();
+      @include hover();
+    }
+  }
+}
+
+.dash {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+
+  &__img {
+    width: 50%;
+  }
+}
+#social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4em;
+
+  .fab {
+   @include fa();
+    @include hover();
+  }
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  color: $color-silver;
+  font-size: 0.5em;
+}
+footer {
+}
+@media only screen and (max-width: 600px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    &__input-div {
+      &--email {
+        margin-bottom: 1em;
+        width: 300px;
+      }
+    }
+    &__button-div {
+      &--submit {
+        margin-top: 1em;
+        width: 360px;
+      }
+    }
+  }
+  .dash {
+    &__img {
+      width: 70%;
+    }
+  }
+}
